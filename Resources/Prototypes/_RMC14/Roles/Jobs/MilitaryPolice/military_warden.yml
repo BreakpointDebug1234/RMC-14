@@ -39,7 +39,7 @@
         RMCSkillFirearms: 1
         RMCSkillFireman: 2
         RMCSkillLeadership: 1
-        RMCSkillMedical: 1
+        RMCSkillMedical: 2
         RMCSkillOverwatch: 1
         RMCSkillPolice: 2
     - type: MarineOrders
