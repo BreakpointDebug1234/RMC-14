@@ -277,6 +277,34 @@
 
 - type: entity
   parent: RMCSmartGun
+  id: RMCSmartGunRiot
+  name: ML66R riot smart gun
+  description: This smart gun has been precisely calibrated for crowd control.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: RMCMagazineSmartGunRubber
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/gun_sg_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazineSmartGunRubber
+          - RMCMagazineSmartGun
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: RMCPowerCellSmartgun
+        whitelist:
+          components:
+          - SmartGunBattery
+  - type: ItemCamouflage
+    camouflageVariations: { }
+    colors: {}
+
+- type: entity
+  parent: RMCSmartGun
   id: RMCSmartGunRoyal
   name: ML66C 'royal' smart gun
   description: The actual firearm in the 2-piece ML66C Smart Gun System. This Variant is used by the Three Sun Empires Royal Marines Commando units. You may toggle firing restrictions by using a special action.
