@@ -11,7 +11,7 @@
   icon: "RMCJobIconSynth"
   requireAdminNotify: true
   joinNotifyCrew: true
-  whitelisted: true
+  whitelisted: false
   supervisors: cm-job-supervisors-co
   accessGroups:
   - ShipMasterAccess
@@ -102,7 +102,7 @@
       - type: IVDripTarget
       - type: RMCSuicide
         damage: { }
-  hidden: true
+  hidden: false
 
 - type: startingGear
   id: RMCGearSynthetic

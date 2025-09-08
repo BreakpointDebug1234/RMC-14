@@ -603,7 +603,6 @@
   id: SynthShoesRMC
   name: rmc-loadout-group-synthetic-shoes
   minLimit: 1
-  maxLimit: 1
   loadouts:
   - ShoeWhiteRMCSynth
   - BootsBlackRMCSynth
