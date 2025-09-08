@@ -602,16 +602,16 @@
 - type: loadoutGroup
   id: SynthShoesRMC
   name: rmc-loadout-group-synthetic-shoes
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
+  - ShoeWhiteRMCSynth
   - BootsBlackRMCSynth
   - ShoesBlackRMCSynth
   - ShoesBrownRMCSynth
   - ShoesGreenRMCSynth
   - ShoesPurpleRMCSynth
   - ShoesRedRMCSynth
-  - ShoeWhiteRMCSynth
   - ShoeYellowRMCSynth
 
 - type: loadoutGroup
@@ -679,10 +679,10 @@
   name: rmc-loadout-group-backpack
   minLimit: 1
   loadouts:
+  - MarineSatchel
   - BackpackEngineerRMC
   - BackpackMarineMedicRMC
   - MarineTechnicianSatchel
-  - MarineSatchel
   - MarineLeatherSatchel
   - MarineMedicSatchel
   - SatchelWelderRMC

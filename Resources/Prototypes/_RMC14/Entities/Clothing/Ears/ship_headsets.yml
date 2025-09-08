@@ -521,7 +521,7 @@
     containers:
       key_slots:
       - CMEncryptionKeyCommon
-      - RMCEncryptionKeyMarineCommand
+      - RMCEncryptionKeySeniorCommand
   - type: HeadsetMultiBroadcast
     cooldown: 60
   - type: GrantSquadLeaderTracker

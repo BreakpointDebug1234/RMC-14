@@ -108,6 +108,9 @@
   id: RMCGearSynthetic
   equipment:
     id: RMCIDCardSynth
+    gloves: CMHandsInsulated
+    ears: RMCHeadsetSynth
+    belt: CMBeltUtilityFilled
 
 - type: startingGear
   id: RMCGearSyntheticEquipped
