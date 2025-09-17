@@ -55,6 +55,14 @@
     foldVerbText: rmc-sleeves-verb-fold
 
 - type: entity
+  parent: RMCJumpsuitVeteranPMCCommando
+  id: RMCJumpsuitVeteranPMCCommandoGunner
+  suffix: Webbing, Gunner
+  components:
+  - type: WebbingClothing
+    startingWebbing: RMCWebbingPMCCommandoGunner
+
+- type: entity
   parent: [RMCMarineUniformBase, RMCFoldableUniformBase]
   id: RMCJumpsuitVeteranPMCCorporate
   name: We-Ya corporate security uniform

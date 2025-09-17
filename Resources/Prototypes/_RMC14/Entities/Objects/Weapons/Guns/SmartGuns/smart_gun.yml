@@ -213,7 +213,7 @@
           - RMCMagazineSmartGun #For some reason when this is removed mags literally becomes unusable :confused:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: RMCPowerCellSmartgun
+        startingItem: RMCPowerCellML79A
         whitelist:
           components:
           - SmartGunBattery

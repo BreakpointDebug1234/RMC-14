@@ -1489,6 +1489,17 @@
       amount: 2
 
 - type: entity
+  parent: RMCBeltSmartGunOperatorPistolPMC
+  id: RMCBeltSmartGunOperatorPistolCommandoFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCMK80
+    - id: RMCMagazineSmartGunirradiated
+      amount: 4
+
+- type: entity
   parent: RMCBeltHolsterSMG
   id: RMCBeltHolsterSMGFilledSMGM63B2
   suffix: Filled, SMGM63B2

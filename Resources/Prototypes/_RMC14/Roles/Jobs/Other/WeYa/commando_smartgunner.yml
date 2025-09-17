@@ -1,0 +1,111 @@
+#   Commando Gunner
+- type: job
+  parent: CMJobBase
+  id: RMCPMCCommandoGunner
+  name: rmc-job-name-pmc-commando-gunner
+  description: rmc-ghost-role-information-pmc-description
+  playTimeTracker: RMCJobPMCCommandoGunner
+  ranks:
+    RMCRankWeYaCommandoGunner: []
+  startingGear: RMCJobPMCCommandoGunner
+  icon: RMCJobIconPMCCommandoGunner
+  joinNotifyCrew: false
+  accessGroups:
+  - Colony
+  - RMCWeYa
+  spawnMenuRoleName: WEYA PMC Commando Gunner
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: NpcFactionMember
+      factions:
+      - WeYa
+    - type: Skills
+      skills:
+        RMCSkillCqc: 3
+        RMCSkillFirearms: 2
+        RMCSkillPolice: 2
+        RMCSkillFireman: 2
+        RMCSkillConstruction: 2
+        RMCSkillEngineer: 2
+        RMCSkillSmartGun: 1
+        RMCSkillEndurance: 3
+    - type: SquadArmorWearer
+    - type: JobPrefix
+      prefix: rmc-job-prefix-pmc-commando-gunner
+  hidden: true
+
+- type: entity
+  id: RMCRandomHumanoidPMCCommandoGunner
+  name: weya pmc commando ghost role gunner
+  suffix: Spawner, Player
+  components:
+  - type: Sprite
+    sprite: _RMC14/Markers/landmarks.rsi
+    state: pmc_spawn
+  - type: RandomHumanoidSpawner
+    settings: RMCPMCCommandoGunner
+
+- type: entity
+  parent: CMSpawnPointJobBase
+  id: RMCSpawnPointPMCCommandoGunner
+  name: weya pmc gunner spawn point
+  components:
+  - type: SpawnPoint
+    job_id: RMCPMCCommandoGunner
+  - type: Sprite
+    sprite: _RMC14/Markers/landmarks.rsi
+    state: pmc_spawn
+
+- type: randomHumanoidSettings
+  parent: EventHumanoid
+  id: RMCPMCCommandoGunner
+  components:
+  - type: GhostRole
+    name: rmc-ghost-name-pmc-commando-gunner
+    description: rmc-ghost-role-information-pmc-description
+    rules: rmc-ghost-role-information-pmc-rules
+    reregister: false
+    job: RMCPMCCommandoGunner
+    raffle:
+      settings: short
+    requirements:
+    - !type:RoleTimeRequirement
+      role: CMJobSmartGunOperator
+      time: 18000 # 5 Hours
+  - type: GhostRoleApplySpecial
+    squad: SquadPMC
+
+- type: startingGear
+  id: RMCJobPMCCommandoGunner
+  equipment:
+    id: RMCIDCardPMC
+    ears: RMCHeadsetDistressPMC
+    jumpsuit: RMCJumpsuitVeteranPMCCommandoGunner
+    outerClothing: CMArmorM4PMCSmartGunHarnessCommando
+    gloves: RMCHandsVeteranPMCCommando
+    head: ArmorHelmetPMCCommando
+    shoes: RMCBootsPMCCommandoFilled
+    mask: RMCMaskBalaclava # TODO RMC14: M8 pattern armored balaclava
+    suitstorage: RMCSmartGunWhiteOut
+    pocket1: RMCPouchDrumPMCFill
+    pocket2: RMCPouchMedicalSocMarineRaiderFill
+    belt: RMCBeltSmartGunOperatorPistolCommandoFilled
+    eyes: RMCGlassesSmartGunSight
+    back: RMCScabbardMacheteSGFilled
+  storage:
+    outerClothing:
+    - CMMagazinePistolMK80 #incendiary magazine
+    - CMMagazinePistolMK80 #incendiary magazine
+    - RMCPowerCellML79A
+    - RMCPowerCellML79A
+
+- type: playTimeTracker
+  id: RMCJobPMCCommandoGunner
+
+- type: jobIcon
+  parent: CMJobIconBase
+  id: RMCJobIconPMCCommandoGunner
+  icon:
+    sprite: _RMC14/Interface/cm_job_icons.rsi
+    state: pmc_commando_sg

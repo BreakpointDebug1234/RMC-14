@@ -134,6 +134,10 @@
     sprintModifier: 0.666
   - type: Corrodible
     isCorrodible: false
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,5,1 # 4 slots
 
 - type: entity
   parent: CMArmorM4PMC
@@ -155,6 +159,14 @@
     sprintModifier: 0.727
   - type: Corrodible
     isCorrodible: false
+
+- type: entity
+  parent: CMArmorM4PMCCommando
+  id: CMArmorM4PMCCommandoLeader
+  name: M5X leader exoskeleton armor
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/OuterClothing/PMC/commando_leader.rsi
 
 # TODO RMC14: Do we not have something for fire resistance?
 - type: entity

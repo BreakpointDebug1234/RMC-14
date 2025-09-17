@@ -205,6 +205,15 @@
   - type: SmartGunBattery
 
 - type: entity
+  parent: RMCPowerCellSmartgun
+  id: RMCPowerCellML79A
+  name: smart gun ML79A battery
+  components:
+  - type: Battery
+    maxCharge: 15000
+    startingCharge: 15000
+
+- type: entity
   id: RMCPowerCellSlot
   abstract: true
   components:

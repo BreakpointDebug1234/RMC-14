@@ -89,6 +89,30 @@
   paygrade: PMC-ETL
 
 - type: rank
+  id: RMCRankWeYaCommandoCatcher
+  name: Commando Xenospecialist
+  prefix: CXS.
+  paygrade: PMC-CXS
+
+- type: rank
+  id: RMCRankWeYaCommandoGunner
+  name: Commando Gunner
+  prefix: COSG.
+  paygrade: PMC-CSG
+
+- type: rank
+  id: RMCRankWeYaCommando
+  name: Commando
+  prefix: COM.
+  paygrade: PMC-COM
+
+- type: rank
+  id: RMCRankWeYaCommandoLeader
+  name: Commando Leader
+  prefix: CTL.
+  paygrade: PMC-CTL
+
+- type: rank
   id: RMCRankWeYaSiteDirector
   name: PMC Site Director
   prefix: Director

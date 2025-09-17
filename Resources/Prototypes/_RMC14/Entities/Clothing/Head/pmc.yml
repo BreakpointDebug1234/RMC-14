@@ -76,6 +76,21 @@
   - type: RMCEarProtection
 
 - type: entity
+  parent: ArmorHelmetPMCCommando
+  id: ArmorHelmetPMCCommandoLeader
+  name: PMC M5X leader helmet
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Clothing/Head/PMC/commando_leader.rsi
+  - type: Clothing
+    sprite: _RMC14/Objects/Clothing/Head/PMC/commando_leader.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+      - state: equipped-HELMET-Layer
+        shader: unshaded
+
+- type: entity
   parent: ArmorHelmetPMC
   id: ArmorHelmetPMCCorporate
   name: We-Ya corporate security helmet
