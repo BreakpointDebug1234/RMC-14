@@ -55,7 +55,7 @@
     foldVerbText: rmc-sleeves-verb-fold
   - type: UniformAccessoryHolder
     startingAccessories:
-    - RMCPatchWeYa
+    - RMCPatchWeYaBlack
   - type: WebbingClothing
     startingWebbing: RMCWebbingPMCCommando
 
@@ -66,6 +66,13 @@
   components:
   - type: WebbingClothing
     startingWebbing: RMCWebbingPMCCommandoGunner
+
+- type: entity
+  parent: RMCJumpsuitVeteranPMCCommando
+  id: RMCJumpsuitVeteranPMCCommandoSurvivor
+  suffix: Webbing, Gunner
+  removeComponents:
+  - type: WebbingClothing
 
 - type: entity
   parent: [RMCMarineUniformBase, RMCFoldableUniformBase]

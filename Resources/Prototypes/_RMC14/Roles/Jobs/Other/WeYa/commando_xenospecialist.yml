@@ -92,9 +92,9 @@
     shoes: RMCBootsPMCCommandoFilled
     mask: RMCMaskBalaclava # TODO RMC14: M8 pattern armored balaclava
     suitstorage: RMCWeaponRifleM54C2
-    pocket1: RMCPouchToolsCommandoFill
+    pocket1: RMCPouchMedicalCommandoXenoSpecFill
     pocket2: RMCPouchMedicalCommandoFill
-    belt: RMCCommandoXenospecialistBeltFilled #TODO RMC14 add bic, keto, etc
+    belt: RMCCommandoXenospecialistBeltFilled
     eyes: RMCGlassesMedicalHUDGlasses #TODO RMC14: Mark 4 Battle Medic
     back: RMCSatchelLightpack #TODO RMC14: Replace custom backpack
   storage:
@@ -109,7 +109,7 @@
     - CMRollerBedSpawnFolded
     - RMCSynthResetKey
     - CMDefibrillator #TODO RMC14: Replace with advanced defib
-    - CMAdvFirstAidKitFilled #TODO RMC14: Replace with elite field revival kit
+    #TODO RMC14: Elite field revival kit
 
 - type: playTimeTracker
   id: RMCJobPMCCommandoXenospecialist

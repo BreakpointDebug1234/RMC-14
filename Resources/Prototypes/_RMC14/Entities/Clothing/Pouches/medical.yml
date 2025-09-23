@@ -9,7 +9,7 @@
     sprite: _RMC14/Objects/Clothing/Pouches/socmed.rsi
   - type: Storage
     grid:
-    - 0,0,25,1 #13 slots
+    - 0,0,13,3 #13 slots
     whitelist:
       tags:
       - CMTraumaKit
@@ -110,6 +110,28 @@
     - id: CMTricordrazineAutoInjector
     - id: Stimpack #TODO RMC14: replace withspeed, brain and redemption stimulant
       amount: 3
+
+# Commando xenospec
+- type: entity
+  parent: RMCPouchMedicalSoc
+  id: RMCPouchMedicalCommandoXenoSpecFill
+  suffix: Filled
+  components:
+  - type: StorageFill # TODO RMC14
+    contents:
+    - id: CMHealthAnalyzer
+    #TODO RMC14: splints x5
+    - id: CMTraumaKit10 #TODO RMC14: replace with advanced kits
+      amount: 2
+    - id: CMBurnKit10 #TODO RMC14: replace with advanced kits
+      amount: 2
+    - id: CMBicaridineAutoInjector
+    - id: CMMeralyneAutoInjector
+    - id: CMKelotaneAutoInjector
+    - id: CMDermalineAutoInjector
+    #TODO RMC14: oxy autoinjector
+    - id: CMTricordrazineAutoInjector
+    - id: CMDexalinPlusAutoInjector
 
 - type: entity
   parent: RMCPouchMedicalSocDutch

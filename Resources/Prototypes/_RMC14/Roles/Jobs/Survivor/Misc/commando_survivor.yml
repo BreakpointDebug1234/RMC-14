@@ -1,19 +1,19 @@
-#   Commando
+# Used in Shivas
 - type: job
-  parent: CMJobBase
-  id: RMCPMCCommandoStandard
+  parent: CMSurvivor
+  id: RMCSurvivorCorporateCommando
   name: rmc-job-name-pmc-commando-standard
   description: rmc-ghost-role-information-pmc-description
-  playTimeTracker: RMCJobPMCCommandoStandard
+  playTimeTracker: RMCJobSurvivorCorporateCommando
   ranks:
     RMCRankWeYaCommando: []
-  startingGear: RMCJobPMCCommandoStandard
-  icon: RMCJobIconPMCCommandoStandard
+  startingGear: RMCJobSurvivorCorporateCommando
+  icon: RMCJobIconSurvivorCorporateCommando
   joinNotifyCrew: false
   accessGroups:
   - Colony
   - RMCWeYa
-  spawnMenuRoleName: WEYA PMC Commando
+  spawnMenuRoleName: WEYA PMC Commando (Shivas survivor)
   special:
   - !type:AddComponentSpecial
     components:
@@ -22,25 +22,23 @@
       - WeYa
     - type: Skills
       skills:
-        RMCSkillCqc: 3
-        RMCSkillFirearms: 3
+        RMCSkillCqc: 2
+        RMCSkillFirearms: 2
         RMCSkillPolice: 2
-        RMCSkillFireman: 3
-        RMCSkillConstruction: 1
+        RMCSkillFireman: 2
         RMCSkillEngineer: 1
-        RMCSkillEndurance: 4
+        RMCSkillEndurance: 2
         RMCSkillMedical: 2
-        RMCSkillSurgery: 2
+        RMCSkillSurgery: 1
         RMCSkillMeleeWeapons: 1
         RMCSkillJtac: 1
         RMCSkillVehicles: 1
-    - type: SquadArmorWearer
     - type: JobPrefix
       prefix: rmc-job-prefix-pmc-commando-standard
   hidden: true
 
 - type: entity
-  id: RMCRandomHumanoidPMCCommandoStandard
+  id: RMCRandomHumanoidSurvivorCorporateCommando
   name: weya pmc commando ghost role
   suffix: Spawner, Player
   components:
@@ -48,29 +46,29 @@
     sprite: _RMC14/Markers/landmarks.rsi
     state: pmc_spawn
   - type: RandomHumanoidSpawner
-    settings: RMCPMCCommandoStandard
+    settings: RMCSurvivorCorporateCommando
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: RMCSpawnPointPMCCommandoStandard
+  id: RMCSpawnPointSurvivorCorporateCommando
   name: weya pmc commando spawn point
   components:
   - type: SpawnPoint
-    job_id: RMCPMCCommandoStandard
+    job_id: RMCSurvivorCorporateCommando
   - type: Sprite
     sprite: _RMC14/Markers/landmarks.rsi
     state: pmc_spawn
 
 - type: randomHumanoidSettings
   parent: EventHumanoid
-  id: RMCPMCCommandoStandard
+  id: RMCSurvivorCorporateCommando
   components:
   - type: GhostRole
     name: rmc-ghost-name-pmc-commando-standard
     description: rmc-ghost-role-information-pmc-description
     rules: rmc-ghost-role-information-pmc-rules
     reregister: false
-    job: RMCPMCCommandoStandard
+    job: RMCSurvivorCorporateCommando
     raffle:
       settings: short
     requirements:
@@ -81,44 +79,39 @@
     squad: SquadPMC
 
 - type: startingGear
-  id: RMCJobPMCCommandoStandard
+  id: RMCJobSurvivorCorporateCommando
   equipment:
     id: RMCIDCardPMC
     ears: RMCHeadsetDistressPMC
-    jumpsuit: RMCJumpsuitVeteranPMCCommando
+    jumpsuit: RMCJumpsuitVeteranPMCCommandoSurvivor
     outerClothing: CMArmorM4PMCCommando
     gloves: RMCHandsVeteranPMCCommando
     head: ArmorHelmetPMCCommando
     shoes: RMCBootsPMCCommandoFilled
     mask: RMCMaskBalaclava # TODO RMC14: M8 pattern armored balaclava
-    suitstorage: RMCWeaponRifleM54C2
-    pocket1: RMCPouchToolsCommandoFill
-    pocket2: RMCPouchMedicalCommandoFill
+    suitstorage: RMCWeaponRifleM54CWhite
+    pocket1: RMCPouchSurvivalBlackFilled
+    pocket2: RMCPouchFirstAidPMCFill
     belt: RMCCommandoBeltFilled
-    eyes: RMCGlassesMedicalHUDGlasses #TODO RMC14: Mark 4 Battle Medic
     back: RMCSatchelLightpack #TODO RMC14: Replace with commando combat backpack
   storage:
     outerClothing:
-    - RMCMagazineRifleM54CHEAP
-    - RMCMagazineRifleM54CHEAP
-    - RMCMagazineRifleM54CHEAP
-    - RMCMagazineRifleM54CHEAP
+    - CMMRE # TODO RMC14: PMC CFR ration
     back:
     - CMStunbaton
-    - RMCMotionDetector # TODO RMC14: Replace with corporate version (detects all non PMC)
-    - RMCBoxHandcuffs
-    - RMCRadioHandheldColonyOff
-    - CMRollerBedSpawnFolded
-    - RMCSynthResetKey
-    - CMDefibrillator #TODO RMC14: Replace with advanced defib
+    - RMCZipties
+    - RMCCigarettePackWeYaGold
+    - RMCZippo
+    - CMWEYAFlask
     #TODO RMC14: Elite field revival kit
+    - CMDefibrillator
 
 - type: playTimeTracker
-  id: RMCJobPMCCommandoStandard
+  id: RMCJobSurvivorCorporateCommando
 
 - type: jobIcon
   parent: CMJobIconBase
-  id: RMCJobIconPMCCommandoStandard
+  id: RMCJobIconSurvivorCorporateCommando
   icon:
     sprite: _RMC14/Interface/cm_job_icons.rsi
     state: pmc_commando
