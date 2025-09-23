@@ -108,7 +108,7 @@
     - id: CMDermalineAutoInjector
     #TODO RMC14: oxy autoinjector
     - id: CMTricordrazineAutoInjector
-    - id: Stimpack #TODO RMC14: replace with speed, brain and redemption stimulant
+    - id: Stimpack #TODO RMC14: replace withspeed, brain and redemption stimulant
       amount: 3
 
 - type: entity

@@ -1,19 +1,19 @@
 #   Commando
 - type: job
   parent: CMJobBase
-  id: RMCPMCCommandoStandard
-  name: rmc-job-name-pmc-commando-standard
+  id: RMCPMCCommandoXenospecialist
+  name: rmc-job-name-pmc-commando-xenospecialist
   description: rmc-ghost-role-information-pmc-description
-  playTimeTracker: RMCJobPMCCommandoStandard
+  playTimeTracker: RMCJobPMCCommandoXenospecialist
   ranks:
-    RMCRankWeYaCommando: []
-  startingGear: RMCJobPMCCommandoStandard
-  icon: RMCJobIconPMCCommandoStandard
+    RMCRankWeYaCommandoCatcher: []
+  startingGear: RMCJobPMCCommandoXenospecialist
+  icon: RMCJobIconPMCCommandoXenospecialist
   joinNotifyCrew: false
   accessGroups:
   - Colony
   - RMCWeYa
-  spawnMenuRoleName: WEYA PMC Commando
+  spawnMenuRoleName: WEYA PMC Commando Xenospecialist
   special:
   - !type:AddComponentSpecial
     components:
@@ -32,41 +32,41 @@
         RMCSkillEndurance: 3
     - type: SquadArmorWearer
     - type: JobPrefix
-      prefix: rmc-job-prefix-pmc-commando-standard
+      prefix: rmc-job-prefix-pmc-commando-xenospecialist
   hidden: true
 
 - type: entity
-  id: RMCRandomHumanoidPMCCommandoStandard
-  name: weya pmc commando ghost role
+  id: RMCRandomHumanoidPMCCommandoXenospecialist
+  name: weya pmc commando xenospecialist ghost role
   suffix: Spawner, Player
   components:
   - type: Sprite
     sprite: _RMC14/Markers/landmarks.rsi
     state: pmc_spawn
   - type: RandomHumanoidSpawner
-    settings: RMCPMCCommandoStandard
+    settings: RMCPMCCommandoXenospecialist
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: RMCSpawnPointPMCCommandoStandard
-  name: weya pmc commando spawn point
+  id: RMCSpawnPointPMCCommandoXenospecialist
+  name: weya pmc commando xenospecialist spawn point
   components:
   - type: SpawnPoint
-    job_id: RMCPMCCommandoStandard
+    job_id: RMCPMCCommandoXenospecialist
   - type: Sprite
     sprite: _RMC14/Markers/landmarks.rsi
     state: pmc_spawn
 
 - type: randomHumanoidSettings
   parent: EventHumanoid
-  id: RMCPMCCommandoStandard
+  id: RMCPMCCommandoXenospecialist
   components:
   - type: GhostRole
-    name: rmc-ghost-name-pmc-commando-standard
+    name: rmc-ghost-name-pmc-commando-xenospecialist
     description: rmc-ghost-role-information-pmc-description
     rules: rmc-ghost-role-information-pmc-rules
     reregister: false
-    job: RMCPMCCommandoStandard
+    job: RMCPMCCommandoXenospecialist
     raffle:
       settings: short
     requirements:
@@ -77,7 +77,7 @@
     squad: SquadPMC
 
 - type: startingGear
-  id: RMCJobPMCCommandoStandard
+  id: RMCJobPMCCommandoXenospecialist
   equipment:
     id: RMCIDCardPMC
     ears: RMCHeadsetDistressPMC
@@ -90,15 +90,13 @@
     suitstorage: RMCWeaponRifleM54C2
     pocket1: RMCPouchToolsCommandoFill
     pocket2: RMCPouchMedicalCommandoFill
-    belt: RMCCommandoBeltFilled
+    belt: RMCCommandoXenospecialistBeltFilled #TODO RMC14 add bic, keto, etc
     eyes: RMCGlassesMedicalHUDGlasses #TODO RMC14: Mark 4 Battle Medic
-    back: RMCSatchelLightpack #TODO RMC14: Replace with commando combat backpack
+    back: RMCSatchelLightpack #TODO RMC14: Replace custom backpack
   storage:
     outerClothing:
-    - RMCMagazineRifleM54CHEAP
-    - RMCMagazineRifleM54CHEAP
-    - RMCMagazineRifleM54CHEAP
-    - RMCMagazineRifleM54CHEAP
+    - CMMagazineRifleM54CAP
+    - CMMagazineRifleM54CAP
     back:
     - CMStunbaton
     - RMCMotionDetector # TODO RMC14: Replace with corporate version (detects all non PMC)
@@ -110,11 +108,11 @@
     - CMAdvFirstAidKitFilled #TODO RMC14: Replace with elite field revival kit
 
 - type: playTimeTracker
-  id: RMCJobPMCCommandoStandard
+  id: RMCJobPMCCommandoXenospecialist
 
 - type: jobIcon
   parent: CMJobIconBase
-  id: RMCJobIconPMCCommandoStandard
+  id: RMCJobIconPMCCommandoXenospecialist
   icon:
     sprite: _RMC14/Interface/cm_job_icons.rsi
-    state: pmc_commando
+    state: pmc_commando_xenospecialist

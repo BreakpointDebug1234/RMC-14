@@ -49,7 +49,7 @@
 - type: entity
   parent: CMSpawnPointJobBase
   id: RMCSpawnPointPMCCommandoGunner
-  name: weya pmc gunner spawn point
+  name: weya pmc commando gunner spawn point
   components:
   - type: SpawnPoint
     job_id: RMCPMCCommandoGunner

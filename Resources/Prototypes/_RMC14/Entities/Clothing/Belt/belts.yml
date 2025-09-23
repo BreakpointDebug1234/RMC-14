@@ -1453,8 +1453,20 @@
 
 - type: entity
   parent: CMBeltMarine
+  id: RMCCommandoXenospecialistBeltFilled
+  suffix: Filled, PMC, Xenospecialist, M54C/2
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMMagazineRifleM54CExt
+      amount: 3
+    - id: RMCMagazineRifleM54CIncendiary
+      amount: 2
+
+- type: entity
+  parent: CMBeltMarine
   id: RMCCommandoBeltFilled
-  suffix: Filled, M54C/2,PMC, Commando
+  suffix: Filled, PMC, Commando, M54C/2
   components:
   - type: StorageFill
     contents:
