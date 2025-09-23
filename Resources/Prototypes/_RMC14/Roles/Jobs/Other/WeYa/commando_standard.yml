@@ -23,13 +23,17 @@
     - type: Skills
       skills:
         RMCSkillCqc: 3
-        RMCSkillFirearms: 2
+        RMCSkillFirearms: 3
         RMCSkillPolice: 2
-        RMCSkillFireman: 2
-        RMCSkillConstruction: 2
-        RMCSkillEngineer: 2
-        RMCSkillSmartGun: 1
-        RMCSkillEndurance: 3
+        RMCSkillFireman: 3
+        RMCSkillConstruction: 1
+        RMCSkillEngineer: 1
+        RMCSkillEndurance: 4
+        RMCSkillMedical: 2
+        RMCSkillSurgery: 2
+        RMCSkillMeleeWeapons: 1
+        RMCSkillJtac: 1
+        RMCSkillVehicles: 1
     - type: SquadArmorWearer
     - type: JobPrefix
       prefix: rmc-job-prefix-pmc-commando-standard
