@@ -60,7 +60,8 @@ rmc-first-aid-container-label-text = FA
 rmc-emergency-medicine-container-label-text = EM
 rmc-dexalin-plus-container-label-text = D+
 rmc-epinephrine-container-label-text = EP
-rmc-merabic-container-label-text = MB
+rmc-meralyne-container-label-text = ME
+rmc-dermaline-container-label-text = DE
 rmc-russianred-container-label-text = Rr
 
 rmc-custom-container-label-text = {$customLabel}

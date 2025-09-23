@@ -89,7 +89,7 @@
     mask: RMCMaskBalaclava # TODO RMC14: M8 pattern armored balaclava
     suitstorage: RMCSmartGunWhiteOut
     pocket1: RMCPouchDrumPMCFill
-    pocket2: RMCPouchMedicalSocMarineRaiderFill
+    pocket2: RMCPouchMedicalCommandoFill
     belt: RMCBeltSmartGunOperatorPistolCommandoFilled
     eyes: RMCGlassesSmartGunSight
     back: RMCScabbardMacheteSGFilled
