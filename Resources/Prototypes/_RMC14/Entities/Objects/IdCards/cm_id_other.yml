@@ -210,19 +210,6 @@
     - RMCWeYa
 
 - type: entity
-  parent: CMIDCardSilver
-  id: RMCIDCardPMC
-  name: PMC holo-badge
-  description: A corporate holo-badge. It has a unique uncapped bottom.
-  components:
-  - type: ItemIFF
-    faction: FactionWeYa
-  - type: Access
-    groups:
-    - Colony
-    - RMCWeYa
-
-- type: entity
   id: FactionWeYa
   categories: [ HideSpawnMenu ]
   components:

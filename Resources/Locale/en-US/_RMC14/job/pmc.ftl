@@ -65,6 +65,10 @@ rmc-ghost-name-pmc-commando-gunner = We-Ya PMC Commando Gunner (Neutral)
 rmc-job-name-pmc-commando-gunner = Commando Gunner
 rmc-job-prefix-pmc-commando-gunner = CSG
 
+rmc-ghost-name-pmc-commando-standard = We-Ya PMC Commando (Neutral)
+rmc-job-name-pmc-commando-standard = Commando
+rmc-job-prefix-pmc-commando-standard = COM
+
 rmc-job-name-pmc-bodyguard = Bodyguard
 rmc-ghost-name-pmc-bodyguard = Weston-Yamada Goon (Executive Bodyguard Detail)
 

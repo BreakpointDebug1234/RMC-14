@@ -673,6 +673,19 @@
 
 - type: entity
   parent: CMWebbingBlack
+  id: RMCWebbingPMCCommando
+  suffix: PMC, Commando, Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCGrenadeBlastM12
+    - id: RMCGrenadeBlastM12
+    - id: CMMRE # TODO RMC14: PMC CFR ration
+    - id: CMFireExtinguisherPortable
+    - id: RMCHandcuffs
+
+- type: entity
+  parent: CMWebbingBlack
   id: RMCWebbingBuckshot
   suffix: Buckshot, Filled
   components:

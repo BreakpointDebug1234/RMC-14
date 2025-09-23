@@ -1452,6 +1452,18 @@
       amount: 5
 
 - type: entity
+  parent: CMBeltMarine
+  id: RMCCommandoBeltFilled
+  suffix: Filled, M54C/2,PMC, Commando
+  components:
+  - type: StorageFill
+    contents:
+    - id: RMCMagazineRifleM54CHEAP
+      amount: 2
+    - id: RMCMagazineRifleM54CIncendiary
+      amount: 3
+
+- type: entity
   parent: RMCBeltSmartGunOperatorPistol
   id: RMCBeltSmartGunOperatorPistolPMC
   name: WY-TM410 pattern smargunner sidearm rig

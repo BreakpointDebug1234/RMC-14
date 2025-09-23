@@ -1,19 +1,19 @@
-#   Commando Gunner
+#   Commando
 - type: job
   parent: CMJobBase
-  id: RMCPMCCommandoGunner
-  name: rmc-job-name-pmc-commando-gunner
+  id: RMCPMCCommandoStandard
+  name: rmc-job-name-pmc-commando-standard
   description: rmc-ghost-role-information-pmc-description
-  playTimeTracker: RMCJobPMCCommandoGunner
+  playTimeTracker: RMCJobPMCCommandoStandard
   ranks:
-    RMCRankWeYaCommandoGunner: []
-  startingGear: RMCJobPMCCommandoGunner
-  icon: RMCJobIconPMCCommandoGunner
+    RMCRankWeYaCommando: []
+  startingGear: RMCJobPMCCommandoStandard
+  icon: RMCJobIconPMCCommandoStandard
   joinNotifyCrew: false
   accessGroups:
   - Colony
   - RMCWeYa
-  spawnMenuRoleName: WEYA PMC Commando Gunner
+  spawnMenuRoleName: WEYA PMC Commando
   special:
   - !type:AddComponentSpecial
     components:
@@ -32,80 +32,89 @@
         RMCSkillEndurance: 3
     - type: SquadArmorWearer
     - type: JobPrefix
-      prefix: rmc-job-prefix-pmc-commando-gunner
+      prefix: rmc-job-prefix-pmc-commando-standard
   hidden: true
 
 - type: entity
-  id: RMCRandomHumanoidPMCCommandoGunner
-  name: weya pmc commando ghost role gunner
+  id: RMCRandomHumanoidPMCCommandoStandard
+  name: weya pmc commando ghost role
   suffix: Spawner, Player
   components:
   - type: Sprite
     sprite: _RMC14/Markers/landmarks.rsi
     state: pmc_spawn
   - type: RandomHumanoidSpawner
-    settings: RMCPMCCommandoGunner
+    settings: RMCPMCCommandoStandard
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: RMCSpawnPointPMCCommandoGunner
-  name: weya pmc gunner spawn point
+  id: RMCSpawnPointPMCCommandoStandard
+  name: weya pmc spawn point
   components:
   - type: SpawnPoint
-    job_id: RMCPMCCommandoGunner
+    job_id: RMCPMCCommandoStandard
   - type: Sprite
     sprite: _RMC14/Markers/landmarks.rsi
     state: pmc_spawn
 
 - type: randomHumanoidSettings
   parent: EventHumanoid
-  id: RMCPMCCommandoGunner
+  id: RMCPMCCommandoStandard
   components:
   - type: GhostRole
-    name: rmc-ghost-name-pmc-commando-gunner
+    name: rmc-ghost-name-pmc-commando-standard
     description: rmc-ghost-role-information-pmc-description
     rules: rmc-ghost-role-information-pmc-rules
     reregister: false
-    job: RMCPMCCommandoGunner
+    job: RMCPMCCommandoStandard
     raffle:
       settings: short
     requirements:
     - !type:RoleTimeRequirement
-      role: CMJobSmartGunOperator
+      role: CMJobRifleman
       time: 18000 # 5 Hours
   - type: GhostRoleApplySpecial
     squad: SquadPMC
 
 - type: startingGear
-  id: RMCJobPMCCommandoGunner
+  id: RMCJobPMCCommandoStandard
   equipment:
     id: RMCIDCardPMC
     ears: RMCHeadsetDistressPMC
-    jumpsuit: RMCJumpsuitVeteranPMCCommandoGunner
-    outerClothing: CMArmorM4PMCSmartGunHarnessCommando
+    jumpsuit: RMCJumpsuitVeteranPMCCommando
+    outerClothing: CMArmorM4PMCCommando
     gloves: RMCHandsVeteranPMCCommando
     head: ArmorHelmetPMCCommando
     shoes: RMCBootsPMCCommandoFilled
     mask: RMCMaskBalaclava # TODO RMC14: M8 pattern armored balaclava
-    suitstorage: RMCSmartGunWhiteOut
-    pocket1: RMCPouchDrumPMCFill
+    suitstorage: RMCWeaponRifleM54C2
+    pocket1: RMCPouchToolsCommandoFill
     pocket2: RMCPouchMedicalCommandoFill
-    belt: RMCBeltSmartGunOperatorPistolCommandoFilled
-    eyes: RMCGlassesSmartGunSight
-    back: RMCScabbardMacheteSGFilled
+    belt: RMCCommandoBeltFilled
+    eyes: RMCGlassesMedicalHUDGlasses #TODO RMC14: Mark 4 Battle Medic
+    back: RMCSatchelLightpack #TODO RMC14: Replace with commando combat backpack
   storage:
     outerClothing:
-    - CMMagazinePistolMK80 # TODO RMC14: incendiary magazine
-    - CMMagazinePistolMK80 # TODO RMC14: incendiary magazine
-    - RMCPowerCellML79A
-    - RMCPowerCellML79A
+    - RMCMagazineRifleM54CHEAP
+    - RMCMagazineRifleM54CHEAP
+    - RMCMagazineRifleM54CHEAP
+    - RMCMagazineRifleM54CHEAP
+    back:
+    - CMStunbaton
+    - RMCMotionDetector # TODO RMC14: Replace with corporate version (detects all non PMC)
+    - RMCBoxHandcuffs
+    - RMCRadioHandheldColonyOff
+    - CMRollerBedSpawnFolded
+    - RMCSynthResetKey
+    - CMDefibrillator #TODO RMC14: Replace with advanced defib
+    - CMAdvFirstAidKitFilled #TODO RMC14: Replace with elite field revival kit
 
 - type: playTimeTracker
-  id: RMCJobPMCCommandoGunner
+  id: RMCJobPMCCommandoStandard
 
 - type: jobIcon
   parent: CMJobIconBase
-  id: RMCJobIconPMCCommandoGunner
+  id: RMCJobIconPMCCommandoStandard
   icon:
     sprite: _RMC14/Interface/cm_job_icons.rsi
-    state: pmc_commando_sg
+    state: pmc_commando

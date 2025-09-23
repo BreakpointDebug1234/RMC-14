@@ -159,6 +159,10 @@
     sprintModifier: 0.727
   - type: Corrodible
     isCorrodible: false
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,5,1 # 4 slots
 
 - type: entity
   parent: CMArmorM4PMCCommando

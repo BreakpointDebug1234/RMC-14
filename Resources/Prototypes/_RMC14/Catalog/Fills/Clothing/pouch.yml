@@ -204,6 +204,22 @@
     - id: RMCExplosivePlastic
       amount: 2
 
+- type: entity
+  parent: RMCPouchToolsSoc
+  id: RMCPouchToolsCommandoFill
+  suffix: PMC, Commando, Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: CMScrewdriver
+    - id: CMWirecutter
+    - id: CMCrowbar
+    - id: RMCCableCoil
+    - id: CMMultitool
+    - id: CMWrench
+    - id: RMCExplosivePlastic
+      amount: 2
+
 # Smartgun Pouch
 - type: entity
   parent: RMCPouchDrumPMC
