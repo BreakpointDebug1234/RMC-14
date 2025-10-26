@@ -23,6 +23,7 @@
     whitelist:
       tags:
       - RMCGrenadeRiot
+      - RMCTeargasGrenade
     capacity: 1
     soundInsert:
       path: /Audio/_RMC14/Weapons/Guns/Reload/m79_reload.ogg
