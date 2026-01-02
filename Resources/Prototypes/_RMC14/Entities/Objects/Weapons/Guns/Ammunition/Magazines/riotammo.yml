@@ -220,6 +220,52 @@
   - type: RMCStaminaDamageOnCollide
     damage: 10
 
+## Smart Gun
+
+- type: entity
+  parent: RMCMagazineSmartGun
+  id: RMCMagazineSmartGunRubber
+  name: "ML66 smart gun magazine rubber (10x30mm)"
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - RMCCartridgeSmartGun10x30mmRubber
+    proto: RMCCartridgeSmartGun10x30mmRubber
+
+- type: entity
+  parent: CMCartridgeSmartGun10x30mm
+  id: RMCCartridgeSmartGun10x30mmRubber
+  name: irradiated cartridge (10x30mm)
+  components:
+  - type: CartridgeAmmo
+    proto: RMCBulletSmartGun10x30mmRubber
+  - type: Tag
+    tags:
+    - RMCCartridgeSmartGun10x30mmRubber
+
+- type: entity
+  parent: CMBulletSmartGun10x30mm
+  id: RMCBulletSmartGun10x30mmRubber
+  name: rubber bullet (10x30mm)
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 4
+  - type: RMCProjectileDamageFalloff
+    thresholds:
+    - range: 0
+      falloff: 9999
+      ignoreModifiers: true
+    - range: 7
+      falloff: 4
+  - type: RMCStaminaDamageOnCollide
+    damage: 15
+  - type: CMArmorPiercing
+    amount: 5
+
 ## Tags
 
 - type: Tag
@@ -235,6 +281,9 @@
   id: RMCMagazineRifleM4SPRubber
 
 - type: Tag
+  id: RMCMagazineSmartGunRubber
+
+- type: TagCMIDCardMilitaryWarden
   id: RMCCartridgeRifle10x24mmRubber
 
 - type: Tag
@@ -248,3 +297,6 @@
 
 - type: Tag
   id: RMCCartridgePistol9mmRubber
+
+- type: Tag
+  id: RMCCartridgeSmartGun10x30mmRubber

@@ -879,6 +879,12 @@
       Classic: _RMC14/Objects/Clothing/OuterClothing/Armor/ml66a/classic.rsi
       Urban: _RMC14/Objects/Clothing/OuterClothing/Armor/ml66a/urban.rsi
 
+- type: entity
+  parent: CMArmorSmartGunCombatHarness
+  id: CMArmorSmartGunCombatHarnessRiot
+  name: ML66R combat harness
+  description: A heavy protective vest designed to be worn with the ML66R Smart Gun System. It has specially designed straps and reinforcement to carry the Smartgun and accessories.
+
 # M2
 - type: entity
   parent: [ RMCAllowSuitStorageClothingArmorMP, CMArmorM3Medium ]

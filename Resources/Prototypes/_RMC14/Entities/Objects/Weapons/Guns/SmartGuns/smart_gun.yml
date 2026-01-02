@@ -188,6 +188,29 @@
 
 - type: entity
   parent: RMCSmartGunNoCamo
+  id: RMCSmartGunRiot
+  name: ML66R smart gun
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Guns/SmartGuns/ml66r.rsi
+    layers:
+    - state: base
+      sprite: _RMC14/Objects/Weapons/Guns/SmartGuns/ml66r.rsi
+    - state: mag-0
+      sprite: _RMC14/Objects/Weapons/Guns/SmartGuns/ml66r.rsi
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: Clothing
+    sprite: _RMC14/Objects/Weapons/Guns/SmartGuns/ml66r.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_ml66a.ogg
+  - type: RMCLoreExaminable
+    content: rmc-lore-examinable-smart-gun
+    factions:
+    - UNMC
+
+- type: entity
+  parent: RMCSmartGunNoCamo
   id: RMCSmartGunPMC
   name: ML79A smart gun
   description: The actual firearm in the 4-piece ML79A Smartgun System. If you have this, you're about to bring some serious pain to anyone in your way. You may toggle firing restrictions by using a special action.
