@@ -44,6 +44,7 @@ public sealed class TackleSystem : EntitySystem
     [Dependency] private readonly SharedGunSystem _gunSystem = default!;
 
     private readonly List<EntityUid> _trackersToRemove = new();
+    private readonly Dictionary<EntityUid, (EntityUid Target, TimeSpan Time)> _pendingTackleSlash = new();
 
     public override void Initialize()
     {
@@ -58,6 +59,7 @@ public sealed class TackleSystem : EntitySystem
         SubscribeLocalEvent<TackledRecentlyComponent, EntityTerminatingEvent>(OnRemove);
 
         SubscribeLocalEvent<TackleComponent, MeleeAttackAttemptEvent>(OnTackleAttackAttempt);
+        SubscribeLocalEvent<TackleComponent, MeleeAttackEvent>(OnTackleAttack);
     }
 
     private void OnDisarmed(Entity<TackleableComponent> target, ref CMDisarmEvent args)
@@ -295,37 +297,43 @@ public sealed class TackleSystem : EntitySystem
         );
     }
 
+    private void DoDisarmEffects(EntityUid user, EntityUid target)
+    {
+        _colorFlash.RaiseEffect(Color.Aqua, new List<EntityUid> { target }, Filter.PvsExcept(user));
+    }
+
     private void OnTackleAttackAttempt(Entity<TackleComponent> ent, ref MeleeAttackAttemptEvent args)
     {
+        _pendingTackleSlash.Remove(ent.Owner);
+
         if (args.Attack is not DisarmAttackEvent disarm)
-        {
             return;
-        }
 
         if (ent.Comp.SlashChance <= 0)
-        {
             return;
-        }
 
         if (!_random.Prob(ent.Comp.SlashChance))
-        {
             return;
-        }
 
         args.Attack = new LightAttackEvent(disarm.Target, args.Weapon, disarm.Coordinates);
+        _pendingTackleSlash[ent.Owner] = (GetEntity(args.Target), _timing.CurTime);
+    }
 
-        //Logging and pop-ups should be server side only
+    private void OnTackleAttack(Entity<TackleComponent> ent, ref MeleeAttackEvent args)
+    {
         if (_net.IsClient)
-        {
             return;
-        }
+
+        if (!_pendingTackleSlash.Remove(ent.Owner, out var pending))
+            return;
+
+
+        if (_timing.CurTime - pending.Time > TimeSpan.FromSeconds(1))
+            return;
 
         var user = ent.Owner;
-        var target = GetEntity(args.Target);
+        var target = pending.Target;
 
-        _adminLog.Add(LogType.RMCTackle, $"{ToPrettyString(user)} tried to disarm {ToPrettyString(target)} but failed, slashing them instead.");
-
-        // Xeno slashes instead
         var selfPopup = Loc.GetString("rmc-tackle-fail-slash-self", ("targetName", Identity.Name(target, EntityManager, user)));
         var targetPopup = Loc.GetString("rmc-tackle-fail-slash-target", ("performerName", Identity.Name(user, EntityManager, target)));
         DoPvsPopups(user,
@@ -337,11 +345,6 @@ public sealed class TackleSystem : EntitySystem
                 ("targetName", Identity.Name(target, EntityManager, other))),
             PopupType.MediumCaution
         );
-    }
-
-    private void DoDisarmEffects(EntityUid user, EntityUid target)
-    {
-        _colorFlash.RaiseEffect(Color.Aqua, new List<EntityUid> { target }, Filter.PvsExcept(user));
     }
 
     private void DoPvsPopups(EntityUid user, EntityUid target, string selfPopup, string targetPopup, Func<EntityUid, string> othersPopup, PopupType selfPopupType = PopupType.Small)
