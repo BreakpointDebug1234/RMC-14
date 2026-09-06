@@ -315,6 +315,11 @@ public sealed class TackleSystem : EntitySystem
         if (!_random.Prob(ent.Comp.SlashChance))
             return;
 
+        var user = ent.Owner;
+        var target = GetEntity(args.Target);
+
+        _adminLog.Add(LogType.RMCTackle, $"{ToPrettyString(user)} tried to disarm {ToPrettyString(target)} but failed, slashing them instead.");
+
         args.Attack = new LightAttackEvent(disarm.Target, args.Weapon, disarm.Coordinates);
         _pendingTackleSlash[ent.Owner] = (GetEntity(args.Target), _timing.CurTime);
     }
