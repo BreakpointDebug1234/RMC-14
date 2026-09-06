@@ -2,6 +2,7 @@ using Content.Shared._RMC14.Hands;
 using Content.Shared._RMC14.Marines.Skills;
 using Content.Shared._RMC14.Pulling;
 using Content.Shared._RMC14.Xenonids.Parasite;
+using Content.Shared._RMC14.Weapons.Melee;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Damage.Systems;
@@ -16,6 +17,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
@@ -54,6 +56,8 @@ public sealed class TackleSystem : EntitySystem
 
         SubscribeLocalEvent<TackledRecentlyComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<TackledRecentlyComponent, EntityTerminatingEvent>(OnRemove);
+
+        SubscribeLocalEvent<TackleComponent, MeleeAttackAttemptEvent>(OnTackleAttackAttempt);
     }
 
     private void OnDisarmed(Entity<TackleableComponent> target, ref CMDisarmEvent args)
@@ -288,6 +292,50 @@ public sealed class TackleSystem : EntitySystem
             other => Loc.GetString("rmc-disarm-attempt-others",
                 ("performerName", Identity.Name(user, EntityManager, other)),
                 ("targetName", Identity.Name(target, EntityManager, other)))
+        );
+    }
+
+    private void OnTackleAttackAttempt(Entity<TackleComponent> ent, ref MeleeAttackAttemptEvent args)
+    {
+        if (args.Attack is not DisarmAttackEvent disarm)
+        {
+            return;
+        }
+
+        if (ent.Comp.SlashChance <= 0)
+        {
+            return;
+        }
+
+        if (!_random.Prob(ent.Comp.SlashChance))
+        {
+            return;
+        }
+
+        args.Attack = new LightAttackEvent(disarm.Target, args.Weapon, disarm.Coordinates);
+
+        //Logging and pop-ups should be server side only
+        if (_net.IsClient)
+        {
+            return;
+        }
+
+        var user = ent.Owner;
+        var target = GetEntity(args.Target);
+
+        _adminLog.Add(LogType.RMCTackle, $"{ToPrettyString(user)} tried to disarm {ToPrettyString(target)} but failed, slashing them instead.");
+
+        // Xeno slashes instead
+        var selfPopup = Loc.GetString("rmc-tackle-fail-slash-self", ("targetName", Identity.Name(target, EntityManager, user)));
+        var targetPopup = Loc.GetString("rmc-tackle-fail-slash-target", ("performerName", Identity.Name(user, EntityManager, target)));
+        DoPvsPopups(user,
+            target,
+            selfPopup,
+            targetPopup,
+            other => Loc.GetString("rmc-tackle-fail-slash-others",
+                ("performerName", Identity.Name(user, EntityManager, other)),
+                ("targetName", Identity.Name(target, EntityManager, other))),
+            PopupType.MediumCaution
         );
     }
 
