@@ -1,10 +1,10 @@
+using System.Text.RegularExpressions;
 using Content.Shared._RMC14.PetNaming;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.GameObjects;
-using System.Text.RegularExpressions;
 
 namespace Content.Server._RMC14.PetNamingSystem;
 
