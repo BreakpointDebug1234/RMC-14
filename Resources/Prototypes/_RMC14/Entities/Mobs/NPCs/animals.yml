@@ -257,6 +257,7 @@
   - type: WarpPoint
     follow: true
     location: Mister Wiggles
+  - type: PetNamingTarget
 
 
 - type: entity
@@ -372,6 +373,7 @@
   - type: WarpPoint
     follow: true
     location: Jones
+  - type: PetNamingTarget
 
 - type: entity
   parent: RMCMobCatCalico
@@ -607,3 +609,4 @@
   - type: ConditionalSpawner
     prototypes:
     - RMCMobMouseDoc
+  - type: PetNamingTarget
